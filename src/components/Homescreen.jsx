@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../assets/HomeScreen.css";
+import "./HomeScreen.css";
 
 const initialClasses = [
   {
@@ -99,7 +99,7 @@ function JoinCard({ onJoin }) {
   );
 }
 
-function Modal({ cls, onClose }) {
+function Modal({ cls, onClose, onOpenActivity }) {
   if (!cls) return null;
   return (
     <div className="hs-modal-overlay" onClick={onClose}>
@@ -130,13 +130,13 @@ function Modal({ cls, onClose }) {
             <p className="hs-modal-stat-label">Pending</p>
           </div>
         </div>
-        <button className="hs-modal-btn">Open Class</button>
+        <button className="hs-modal-btn" onClick={() => onOpenActivity && onOpenActivity(cls)}>Open Class</button>
       </div>
     </div>
   );
 }
 
-export default function HomeScreen() {
+export default function HomeScreen({ onOpenActivity }) {
   const [activePage, setActivePage] = useState("Classes");
   const [classes, setClasses] = useState(initialClasses);
   const [search, setSearch] = useState("");
@@ -176,9 +176,13 @@ export default function HomeScreen() {
 
   return (
     <div className="hs-app">
-      {selectedClass && (
-        <Modal cls={selectedClass} onClose={() => setSelectedClass(null)} />
-      )}
+    {selectedClass && (
+      <Modal
+        cls={selectedClass}
+        onClose={() => setSelectedClass(null)}
+        onOpenActivity={onOpenActivity}
+      />
+)}
 
       {/* Sidebar */}
       <aside className="hs-sidebar">
