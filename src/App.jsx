@@ -1,7 +1,6 @@
 
 import { useState } from "react";
 import LoginScreen from "./components/LoginScreen";
-import RegisterScreen from "./components/RegisterScreen";
 import HomeScreen from "./components/HomeScreen";
 import ActivityScreen from "./components/ActivityScreen";
 
@@ -14,15 +13,6 @@ export default function App() {
       <LoginScreen
         onLogin={() => setScreen("home")}
         onGoToRegister={() => setScreen("register")}
-      />
-    );
-  }
-
-  if (screen === "register") {
-    return (
-      <RegisterScreen
-        onRegister={() => setScreen("home")}
-        onGoToLogin={() => setScreen("login")}
       />
     );
   }
