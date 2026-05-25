@@ -1,0 +1,319 @@
+/* Container */
+.auth-page {
+  display: flex;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f7f7fb;
+}
+
+/* Left panel — decorativo */
+.auth-panel {
+  width: 420px;
+  background: linear-gradient(145deg, #6c5ce7, #2d2b6b);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  flex-shrink: 0;
+}
+
+.auth-panel-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+.auth-panel-logo-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.auth-panel-logo-name {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+  color: white;
+}
+
+.auth-panel-logo-sub {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.auth-panel-illustration {
+  font-size: 96px;
+  margin-bottom: 32px;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.2));
+}
+
+.auth-panel-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  margin: 0 0 12px;
+}
+
+.auth-panel-subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
+  text-align: center;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Right panel — formulário */
+.auth-form-side {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.auth-form-box {
+  width: 100%;
+  max-width: 420px;
+}
+
+.auth-form-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0 0 6px;
+}
+
+.auth-form-subtitle {
+  font-size: 14px;
+  color: #aaa;
+  margin: 0 0 32px;
+}
+
+/* Campos */
+.auth-field {
+  margin-bottom: 18px;
+}
+
+.auth-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+.auth-label span {
+  color: #e55050;
+  margin-left: 2px;
+}
+
+.auth-input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1.5px solid #e0e0ef;
+  border-radius: 10px;
+  padding: 11px 14px;
+  font-size: 14px;
+  outline: none;
+  background: white;
+  transition: border-color 0.2s;
+  color: #1a1a2e;
+}
+
+.auth-input:focus {
+  border-color: #6c5ce7;
+}
+
+.auth-input.error {
+  border-color: #e55050;
+}
+
+.auth-input-wrap {
+  position: relative;
+}
+
+.auth-input-wrap .auth-input {
+  padding-right: 40px;
+}
+
+.auth-eye-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #aaa;
+  padding: 0;
+}
+
+.auth-error-msg {
+  font-size: 12px;
+  color: #e55050;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Tipo de conta */
+.auth-role-group {
+  display: flex;
+  gap: 12px;
+}
+
+.auth-role-option {
+  flex: 1;
+  border: 1.5px solid #e0e0ef;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  background: white;
+  text-align: center;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.auth-role-option:hover {
+  border-color: #6c5ce7;
+}
+
+.auth-role-option.selected {
+  border-color: #6c5ce7;
+  background: #f0eeff;
+}
+
+.auth-role-icon {
+  font-size: 22px;
+}
+
+.auth-role-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+}
+
+.auth-role-option.selected .auth-role-label {
+  color: #6c5ce7;
+}
+
+/* Botão principal */
+.auth-submit-btn {
+  width: 100%;
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 13px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+
+.auth-submit-btn:hover {
+  background: #5a4bd1;
+}
+
+.auth-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* Divider */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+  color: #ccc;
+  font-size: 13px;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #e8e8f0;
+}
+
+/* Link de troca de tela */
+.auth-switch {
+  text-align: center;
+  font-size: 14px;
+  color: #888;
+  margin-top: 20px;
+}
+
+.auth-switch-btn {
+  background: none;
+  border: none;
+  color: #6c5ce7;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+}
+
+.auth-switch-btn:hover {
+  text-decoration: underline;
+}
+
+/* Forgot password */
+.auth-forgot {
+  text-align: right;
+  margin-top: -10px;
+  margin-bottom: 18px;
+}
+
+.auth-forgot-btn {
+  background: none;
+  border: none;
+  color: #6c5ce7;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Success state */
+.auth-success {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.auth-success-icon {
+  font-size: 56px;
+  margin-bottom: 16px;
+}
+
+.auth-success-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 8px;
+}
+
+.auth-success-text {
+  font-size: 14px;
+  color: #aaa;
+  margin: 0 0 24px;
+}

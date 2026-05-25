@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./HomeScreen.css";
+import "../assets/HomeScreen.css";
 
 const initialClasses = [
   {
