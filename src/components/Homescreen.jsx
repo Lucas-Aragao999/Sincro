@@ -130,13 +130,15 @@ function Modal({ cls, onClose, onOpenActivity }) {
             <p className="hs-modal-stat-label">Pending</p>
           </div>
         </div>
-        <button className="hs-modal-btn" onClick={() => onOpenActivity && onOpenActivity(cls)}>Open Class</button>
+        <button className="hs-modal-btn" onClick={() => onOpenActivity && onOpenActivity(cls)}>
+          Open Class
+        </button>
       </div>
     </div>
   );
 }
 
-export default function HomeScreen({ onOpenActivity }) {
+export default function HomeScreen({ onOpenActivity, onNewActivity }) {
   const [activePage, setActivePage] = useState("Classes");
   const [classes, setClasses] = useState(initialClasses);
   const [search, setSearch] = useState("");
@@ -176,13 +178,13 @@ export default function HomeScreen({ onOpenActivity }) {
 
   return (
     <div className="hs-app">
-    {selectedClass && (
-      <Modal
-        cls={selectedClass}
-        onClose={() => setSelectedClass(null)}
-        onOpenActivity={onOpenActivity}
-      />
-)}
+      {selectedClass && (
+        <Modal
+          cls={selectedClass}
+          onClose={() => setSelectedClass(null)}
+          onOpenActivity={onOpenActivity}
+        />
+      )}
 
       {/* Sidebar */}
       <aside className="hs-sidebar">
@@ -194,7 +196,10 @@ export default function HomeScreen({ onOpenActivity }) {
           </div>
         </div>
 
-        <button className="hs-btn-new-activity">+ New Activity</button>
+        {/* 👇 onNewActivity conectado aqui */}
+        <button className="hs-btn-new-activity" onClick={onNewActivity}>
+          + New Activity
+        </button>
 
         <nav className="hs-nav">
           {navItems.map(({ label, icon }) => (
