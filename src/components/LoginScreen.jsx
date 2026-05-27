@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../assets/AuthScreen.css";
 
-export default function LoginScreen({ onLogin, onGoToRegister }) {
+export default function LoginScreen() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -24,10 +26,9 @@ export default function LoginScreen({ onLogin, onGoToRegister }) {
     }
     setErrors({});
     setLoading(true);
-    // Simula chamada de API
     setTimeout(() => {
       setLoading(false);
-      onLogin({ email });
+      navigate("/home");
     }, 1000);
   };
 
@@ -72,9 +73,7 @@ export default function LoginScreen({ onLogin, onGoToRegister }) {
               onChange={(e) => setEmail(e.target.value)}
               onKeyDown={handleKeyDown}
             />
-            {errors.email && (
-              <p className="auth-error-msg">⚠ {errors.email}</p>
-            )}
+            {errors.email && <p className="auth-error-msg">⚠ {errors.email}</p>}
           </div>
 
           {/* Senha */}
@@ -98,9 +97,7 @@ export default function LoginScreen({ onLogin, onGoToRegister }) {
                 {showPassword ? "🙈" : "👁"}
               </button>
             </div>
-            {errors.password && (
-              <p className="auth-error-msg">⚠ {errors.password}</p>
-            )}
+            {errors.password && <p className="auth-error-msg">⚠ {errors.password}</p>}
           </div>
 
           {/* Esqueci senha */}
@@ -118,7 +115,7 @@ export default function LoginScreen({ onLogin, onGoToRegister }) {
 
           <div className="auth-switch">
             Não tem uma conta?{" "}
-            <button className="auth-switch-btn" onClick={onGoToRegister}>
+            <button className="auth-switch-btn" onClick={() => navigate("/register")}>
               Cadastre-se
             </button>
           </div>

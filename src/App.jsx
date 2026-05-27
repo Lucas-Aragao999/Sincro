@@ -1,42 +1,17 @@
-import { useState } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 import LoginScreen from "./components/LoginScreen";
-import HomeScreen from "./components/HomeScreen";
+import HomeScreen from "./components/Homescreen";
 import ActivityScreen from "./components/ActivityScreen";
 import CreateActivity from "./components/CreateActivity";
 
 export default function App() {
-  const [screen, setScreen] = useState("login");
-  const [selectedActivity, setSelectedActivity] = useState(null);
-
-  if (screen === "login") {
-    return (
-      <LoginScreen
-        onLogin={() => setScreen("home")}
-        onGoToRegister={() => setScreen("register")}
-      />
-    );
-  }
-
-  if (screen === "activity") {
-    return (
-      <ActivityScreen
-        activity={selectedActivity}
-        onBack={() => setScreen("home")}
-      />
-    );
-  }
-
-  if (screen === "create-activity") {
-    return <CreateActivity onBack={() => setScreen("home")} />;
-  }
-
   return (
-    <HomeScreen
-      onOpenActivity={(activity) => {
-        setSelectedActivity(activity);
-        setScreen("activity");
-      }}
-      onNewActivity={() => setScreen("create-activity")}
-    />
+    <Routes>
+      <Route path="/" element={<Navigate to="/login" replace />} />
+      <Route path="/login" element={<LoginScreen />} />
+      <Route path="/home" element={<HomeScreen />} />
+      <Route path="/activity" element={<ActivityScreen />} />
+      <Route path="/create-activity" element={<CreateActivity />} />
+    </Routes>
   );
 }

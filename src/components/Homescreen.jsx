@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../assets/HomeScreen.css";
 
 const initialClasses = [
@@ -99,7 +100,8 @@ function JoinCard({ onJoin }) {
   );
 }
 
-function Modal({ cls, onClose, onOpenActivity }) {
+function Modal({ cls, onClose }) {
+  const navigate = useNavigate();
   if (!cls) return null;
   return (
     <div className="hs-modal-overlay" onClick={onClose}>
@@ -130,7 +132,10 @@ function Modal({ cls, onClose, onOpenActivity }) {
             <p className="hs-modal-stat-label">Pending</p>
           </div>
         </div>
-        <button className="hs-modal-btn" onClick={() => onOpenActivity && onOpenActivity(cls)}>
+        <button
+          className="hs-modal-btn"
+          onClick={() => navigate("/activity", { state: { activity: cls } })}
+        >
           Open Class
         </button>
       </div>
@@ -138,7 +143,8 @@ function Modal({ cls, onClose, onOpenActivity }) {
   );
 }
 
-export default function HomeScreen({ onOpenActivity, onNewActivity }) {
+export default function HomeScreen() {
+  const navigate = useNavigate();
   const [activePage, setActivePage] = useState("Classes");
   const [classes, setClasses] = useState(initialClasses);
   const [search, setSearch] = useState("");
@@ -196,8 +202,7 @@ export default function HomeScreen({ onOpenActivity, onNewActivity }) {
           </div>
         </div>
 
-        {/* 👇 onNewActivity conectado aqui */}
-        <button className="hs-btn-new-activity" onClick={onNewActivity}>
+        <button className="hs-btn-new-activity" onClick={() => navigate("/create-activity")}>
           + New Activity
         </button>
 
