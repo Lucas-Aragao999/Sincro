@@ -188,7 +188,6 @@ export default function HomeScreen() {
         <Modal
           cls={selectedClass}
           onClose={() => setSelectedClass(null)}
-          onOpenActivity={onOpenActivity}
         />
       )}
 
