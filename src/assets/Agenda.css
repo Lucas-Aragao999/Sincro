@@ -1,0 +1,271 @@
+.ag-layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.ag-calendar-card,
+.ag-sidebar-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.ag-calendar-card {
+  flex: 1;
+  min-width: 0;
+}
+
+.ag-calendar-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ag-month-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ag-month-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-h);
+  min-width: 160px;
+}
+
+.ag-nav-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: white;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.ag-nav-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.ag-view-toggle {
+  display: flex;
+  gap: 4px;
+  background: var(--bg-page);
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.ag-view-btn {
+  background: none;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: var(--sans);
+}
+
+.ag-view-btn.active {
+  background: white;
+  color: var(--text-h);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ag-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 4px;
+}
+
+.ag-weekdays span {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  padding: 6px 0;
+}
+
+.ag-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-top: 1px solid var(--border-soft);
+  border-left: 1px solid var(--border-soft);
+}
+
+.ag-cell {
+  min-height: 78px;
+  border-right: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ag-cell.empty {
+  background: #fbfbfd;
+}
+
+.ag-day-num {
+  font-size: 12px;
+  color: var(--text);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.ag-day-num.today {
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+}
+
+.ag-cell-events {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ag-event-chip {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Sidebar — próximos prazos */
+.ag-sidebar-card {
+  width: 260px;
+  flex-shrink: 0;
+}
+
+.ag-sidebar-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-h);
+  margin: 0 0 14px;
+}
+
+.ag-deadline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ag-deadline-item {
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.ag-deadline-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.ag-deadline-tag {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.ag-deadline-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 4px 0 4px;
+}
+
+.ag-deadline-time {
+  font-size: 12px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 0 8px;
+}
+
+.ag-deadline-bar-bg {
+  height: 5px;
+  background: var(--border-soft);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ag-deadline-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+}
+
+/* Lista compacta (mobile) — escondida em telas largas */
+.ag-mobile-list {
+  display: none;
+  flex: 1;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ag-mobile-day-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin: 0 0 6px;
+}
+
+.ag-mobile-event {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 1px solid var(--border);
+  border-left: 3px solid;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin-bottom: 8px;
+}
+
+.ag-mobile-event-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+@media (max-width: 780px) {
+  .ag-layout {
+    flex-wrap: wrap;
+  }
+
+  .ag-calendar-card {
+    display: none;
+  }
+
+  .ag-mobile-list {
+    display: flex;
+  }
+
+  .ag-sidebar-card {
+    width: 100%;
+  }
+}

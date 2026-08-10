@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { IconMail, IconLock, IconEye, IconEyeOff, IconSync, SincroLogo } from "./layout/icons";
 import "../assets/AuthScreen.css";
 
 export default function LoginScreen() {
@@ -38,52 +39,45 @@ export default function LoginScreen() {
 
   return (
     <div className="auth-page">
-      {/* Painel esquerdo */}
-      <div className="auth-panel">
-        <div className="auth-panel-logo">
-          <div className="auth-panel-logo-icon">S</div>
-          <div>
-            <p className="auth-panel-logo-name">Sincro</p>
-            <p className="auth-panel-logo-sub">Academic Management</p>
-          </div>
-        </div>
-        <div className="auth-panel-illustration">🎓</div>
-        <p className="auth-panel-title">Bem-vindo de volta!</p>
-        <p className="auth-panel-subtitle">
-          Acesse sua conta para gerenciar suas turmas, atividades e muito mais.
-        </p>
-      </div>
-
       {/* Formulário */}
       <div className="auth-form-side">
         <div className="auth-form-box">
-          <h1 className="auth-form-title">Entrar</h1>
-          <p className="auth-form-subtitle">Preencha seus dados para acessar a plataforma.</p>
+          <div className="auth-form-logo">
+            <div className="auth-form-logo-icon">
+              <SincroLogo />
+            </div>
+            <p className="auth-form-logo-name">Sincro</p>
+          </div>
+          <p className="auth-form-subtitle-top">Bem-vindo de volta ao seu ambiente acadêmico.</p>
 
           {/* Email */}
           <div className="auth-field">
-            <label className="auth-label">
-              Email <span>*</span>
-            </label>
-            <input
-              className={`auth-input ${errors.email ? "error" : ""}`}
-              type="email"
-              placeholder="seu@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              onKeyDown={handleKeyDown}
-            />
+            <label className="auth-label">E-mail Institucional</label>
+            <div className="auth-input-wrap">
+              <span className="auth-input-icon">
+                <IconMail />
+              </span>
+              <input
+                className={`auth-input has-icon ${errors.email ? "error" : ""}`}
+                type="email"
+                placeholder="seu.nome@instituicao.edu.br"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                onKeyDown={handleKeyDown}
+              />
+            </div>
             {errors.email && <p className="auth-error-msg">⚠ {errors.email}</p>}
           </div>
 
           {/* Senha */}
           <div className="auth-field">
-            <label className="auth-label">
-              Senha <span>*</span>
-            </label>
+            <label className="auth-label">Senha</label>
             <div className="auth-input-wrap">
+              <span className="auth-input-icon">
+                <IconLock />
+              </span>
               <input
-                className={`auth-input ${errors.password ? "error" : ""}`}
+                className={`auth-input has-icon ${errors.password ? "error" : ""}`}
                 type={showPassword ? "text" : "password"}
                 placeholder="••••••••"
                 value={password}
@@ -91,10 +85,11 @@ export default function LoginScreen() {
                 onKeyDown={handleKeyDown}
               />
               <button
+                type="button"
                 className="auth-eye-btn"
                 onClick={() => setShowPassword((v) => !v)}
               >
-                {showPassword ? "🙈" : "👁"}
+                {showPassword ? <IconEyeOff /> : <IconEye />}
               </button>
             </div>
             {errors.password && <p className="auth-error-msg">⚠ {errors.password}</p>}
@@ -114,10 +109,24 @@ export default function LoginScreen() {
           </button>
 
           <div className="auth-switch">
-            Não tem uma conta?{" "}
+            Novo por aqui?{" "}
             <button className="auth-switch-btn" onClick={() => navigate("/register")}>
-              Cadastre-se
+              Criar conta
             </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Painel direito — decorativo */}
+      <div className="auth-panel">
+        <div className="auth-panel-photo">
+          <div className="auth-panel-card">
+            <p className="auth-panel-card-title">
+              <IconSync /> Sincronize seu dia
+            </p>
+            <p className="auth-panel-card-text">
+              Acompanhe suas aulas, gerencie prazos e conecte-se com sua turma em um único lugar.
+            </p>
           </div>
         </div>
       </div>
