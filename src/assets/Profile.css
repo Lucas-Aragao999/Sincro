@@ -1,0 +1,311 @@
+.pf-banner {
+  position: relative;
+  background: linear-gradient(120deg, #7d6fef, #2d2b6b);
+  border-radius: 20px;
+  padding: 24px 28px 20px 140px;
+  min-height: 96px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.pf-avatar {
+  position: absolute;
+  left: 28px;
+  bottom: -18px;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: white;
+  border: 4px solid white;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.pf-banner-info {
+  padding-top: 6px;
+}
+
+.pf-name {
+  font-size: 22px;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 4px;
+}
+
+.pf-course {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 10px;
+}
+
+.pf-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pf-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.16);
+  color: white;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.pf-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 6px;
+}
+
+.pf-btn-edit {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: white;
+  color: var(--primary-dark);
+  border: none;
+  border-radius: 10px;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: var(--sans);
+}
+
+.pf-btn-share {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Cards de estatística */
+.pf-stats-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.4fr;
+  gap: 16px;
+  margin: 30px 0 20px;
+}
+
+.pf-stat-card,
+.pf-achievements-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px 20px;
+}
+
+.pf-stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.pf-stat-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.pf-stat-icon-success {
+  background: var(--success-soft);
+  color: var(--success);
+}
+
+.pf-stat-icon-primary {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.pf-stat-trend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--success);
+}
+
+.pf-stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0 0 4px;
+  font-weight: 600;
+}
+
+.pf-stat-value {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-h);
+  margin: 0;
+}
+
+.pf-stat-value-sub {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.pf-achievements-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.pf-see-all {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pf-achievements-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.pf-achievement {
+  background: var(--primary-soft);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.pf-achievement.locked {
+  background: var(--border-soft);
+  opacity: 0.7;
+}
+
+.pf-achievement-icon {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+}
+
+.pf-achievement-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-h);
+  margin: 4px 0 1px;
+}
+
+.pf-achievement-detail {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Assiduidade + atividade recente */
+.pf-attendance-card,
+.pf-recent-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+
+.pf-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-h);
+  margin: 0 0 10px;
+}
+
+.pf-attendance-note {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+}
+
+.pf-attendance-bar-bg {
+  height: 8px;
+  background: var(--border-soft);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.pf-attendance-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), #a29bfe);
+  border-radius: 4px;
+}
+
+.pf-recent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pf-recent-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pf-recent-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--border-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.pf-recent-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.pf-recent-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0 0 2px;
+}
+
+.pf-recent-detail {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.pf-recent-time {
+  font-size: 12px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}

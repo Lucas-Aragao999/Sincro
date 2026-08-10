@@ -1,0 +1,135 @@
+.ca-content {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.ca-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 560px;
+  overflow: hidden;
+}
+
+.ca-card-header {
+  padding: 26px 28px 20px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.ca-card-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-h);
+  margin: 0 0 4px;
+}
+
+.ca-card-subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.ca-card-body {
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ca-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ca-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.ca-req {
+  color: var(--danger);
+  margin-left: 2px;
+}
+
+.ca-input,
+.ca-textarea {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--text-h);
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.ca-input:focus,
+.ca-textarea:focus {
+  border-color: var(--primary);
+}
+
+.ca-input.error {
+  border-color: var(--danger);
+}
+
+.ca-textarea {
+  resize: none;
+  min-height: 110px;
+}
+
+.ca-error-msg {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--danger);
+}
+
+.ca-card-footer {
+  padding: 16px 28px;
+  border-top: 1px solid var(--border-soft);
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.ca-btn-cancel {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 9px 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+.ca-btn-save {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 9px 20px;
+  border-radius: 8px;
+  border: none;
+  background: var(--primary-dark);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ca-btn-save:hover {
+  background: var(--primary);
+}
