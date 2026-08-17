@@ -1,4 +1,5 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Landing from "./components/landing/Landing";
 import LoginScreen from "./components/LoginScreen";
 import HomeScreen from "./components/Homescreen";
 import ClassDetail from "./components/ClassDetail";
@@ -12,7 +13,9 @@ import Settings from "./components/Settings";
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/login" replace />} />
+      {/* A landing usa <Routes location> nas prévias de tela; isso exige que ela
+          seja montada num path cuja base seja "/" — daí o splat. */}
+      <Route path="/*" element={<Landing />} />
       <Route path="/login" element={<LoginScreen />} />
       <Route path="/home" element={<HomeScreen />} />
       <Route path="/turma/:classId" element={<ClassDetail />} />
@@ -22,7 +25,6 @@ export default function App() {
       <Route path="/agenda" element={<Agenda />} />
       <Route path="/painel-professor" element={<TeacherDashboard />} />
       <Route path="/configuracoes" element={<Settings />} />
-      <Route path="*" element={<Navigate to="/home" replace />} />
     </Routes>
   );
 }

@@ -48,7 +48,7 @@ export default function LoginScreen() {
             </div>
             <p className="auth-form-logo-name">Sincro</p>
           </div>
-          <p className="auth-form-subtitle-top">Bem-vindo de volta ao seu ambiente acadêmico.</p>
+          <p className="auth-subtitle-top">Bem-vindo de volta ao seu ambiente acadêmico.</p>
 
           {/* Email */}
           <div className="auth-field">
